@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/tablapruebas",
+      "handler": "tablaprueba.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tablapruebas/count",
+      "handler": "tablaprueba.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tablapruebas/:id",
+      "handler": "tablaprueba.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/tablapruebas",
+      "handler": "tablaprueba.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/tablapruebas/:id",
+      "handler": "tablaprueba.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/tablapruebas/:id",
+      "handler": "tablaprueba.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
