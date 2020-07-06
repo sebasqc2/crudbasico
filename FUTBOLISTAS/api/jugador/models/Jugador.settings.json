@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "jugadors",
+  "info": {
+    "name": "jugador",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Nombre": {
+      "default": "",
+      "type": "string"
+    },
+    "Categoria": {
+      "default": "",
+      "type": "string"
+    },
+    "Bio": {
+      "default": "",
+      "type": "text"
+    }
+  }
+}
