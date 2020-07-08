@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../environments/environment.prod';
-import { TokenStorageService } from '../app/shared/storage-services/token-storage.service';
+import { environment } from './../../../../environments/environment.prod';
+import { TokenStorageService } from './../../storage-services/token-storage.service';
 
 
 @Injectable({
@@ -13,7 +13,7 @@ export class CrudServiceService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      //'Authorization': this.token.getToken()
+      'Authorization': this.token.getToken()
     })
   };
 
@@ -38,7 +38,6 @@ export class CrudServiceService {
   }
 
   public createModel(path, model): Observable<any> {
-    alert(`${this.serverURL}${path}`);
     return this.http.post<any>(`${this.serverURL}${path}`, model, this.httpOptions);
   }
 
@@ -69,5 +68,6 @@ export class CrudServiceService {
   public deleteModelWA(path): Observable<any> {
     return this.http.delete<any>(`${this.serverURL}${path}`, {});
   }
+
 
 }

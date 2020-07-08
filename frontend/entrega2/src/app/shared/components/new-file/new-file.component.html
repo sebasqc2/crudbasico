@@ -1,0 +1,59 @@
+<div class="registrationContainer">
+  <ng-template #customLoadingTemplate>
+    <div class="custom-class">
+      <h3>
+        Loading...
+      </h3>
+    </div>
+  </ng-template>
+  <ngx-loading [show]="canShowLoading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate">
+  </ngx-loading>
+
+  <div class="modal-header">
+    <h4 class="modal-title">{{this.relationalFileCompose.relationalObjetive}}</h4>
+    <button type="button" class="close" (click)="closeModal()" style="background-color: red" aria-label="Close">
+      <span aria-hidden="true" style="color:white">&times;</span>
+    </button>
+  </div>
+
+  <section id="regestration">
+    <div class="card-block">
+      <form (ngSubmit)="createFileForm.form.valid && onSubmit()" #createFileForm="ngForm">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-6">
+              <label>Nombre de la / del {{this.relationalFileCompose.relationalTypeId.name}} *</label>
+              <input [(ngModel)]="fileModel.fileName" required class="form-control" required name="name"
+                placeholder="Nombre del Documento">
+            </div>
+            <div class="col-lg-6" *ngIf="this.fileTypeList.length > 0">
+              <label for="noveltyType">Tipo de archivo *</label>
+              <ng-select [virtualScroll]="true" id="noveltyType" name="noveltyType"
+                [(ngModel)]="this.fileModel.fileTypeId" (change)="configRestrictionsByFileType()">
+                <ng-option [value]="typeItem" *ngFor="let typeItem of fileTypeList">
+                  {{typeItem.name}}
+                </ng-option>
+              </ng-select>
+            </div>
+            <div class="col-lg-12 mt-3">
+              <label class="btn btn-default custom-file-upload" *ngIf="selectedFiles === undefined">
+                Seleccionar adjunto
+                <input type="file" required (change)="selectFile($event)" [accept]="stringAccept">
+              </label>
+              <label class="btn btn-disabled custom-file-upload" *ngIf="selectedFiles !== undefined">
+                Archivo seleccionado
+                <input disabled type="file" required multiple="false" (change)="selectFile($event)"
+                  [accept]="stringAccept">
+              </label>
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <br>
+            <button type="submit" class="btn btn-warning btn-raised"
+              [disabled]="!createFileForm.valid || !this.selectedFiles">Subir</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
