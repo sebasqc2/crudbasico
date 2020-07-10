@@ -1,6 +1,8 @@
 <div class="container">
     <div>
-      <h1>Formulario de Estudiante </h1>
+      <h1 style="text-align: center;">Formulario de Estudiante </h1>
+      <h2>Registrar estudiante: </h2>
+      <br>
       <form action="/action_page.php" (ngSubmit)="onSubmit()" #estudianteForm="ngForm">
         <div class="form-group">
           <label for="codigo">Código</label>
@@ -34,7 +36,7 @@
   
         
         <button type="submit" class="btn btn-success" [disabled]="!estudianteForm.form.valid">Cargar</button>
-        <button type="button" class="btn btn-danger" (click)="newAlumno(); estudianteForm.reset()">Reset</button>
+        <button type="button" class="btn btn-danger" (click)="newAlumno(); estudianteForm.reset()">Limpiar</button>
         
       </form>
     </div>

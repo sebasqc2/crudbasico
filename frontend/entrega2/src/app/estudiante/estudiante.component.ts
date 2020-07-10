@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Alumno } from '../alumno';
 import { CrudServiceService } from '../crud-service.service';
-import { TokenStorageService } from './../shared/storage-services/token-storage.service';
 
 @Component({
   selector: 'app-estudiante',
@@ -18,9 +17,9 @@ export class EstudianteComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(JSON.stringify(this.model));
     this.crudServices.createModel('estudiantes', this.model).subscribe( );
-
+    alert('Usuario Registrado');
+    this.newAlumno();
   }
 
   newAlumno(){
