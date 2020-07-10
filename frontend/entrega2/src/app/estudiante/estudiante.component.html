@@ -1,0 +1,48 @@
+<div class="container">
+    <div>
+          <h1 style="text-align: center;">Formulario de Estudiante </h1>
+      <h2>Buscar estudiante: </h2>
+      <br>
+      <form action="/action_page.php" (ngSubmit)="onSubmit()" #estudianteForm="ngForm">
+        <div class="form-group">
+          <label for="codigo">Código</label>
+          <input type="text" class="form-control" id="codigo"
+                 required
+                 [(ngModel)]="model.codigo" name="codigo"
+                 #name="ngModel">
+          <div
+                style="margin-top:1%;"
+               class="alert alert-danger">
+               Código Obligatorio
+          </div>
+        </div>
+           <button type="submit" class="btn btn-success" [disabled]="!estudianteForm.form.valid">Buscar</button>
+
+        <button  style="margin-left:2% ;" type="button" class="btn btn-danger" (click)="newAlumno(); estudianteForm.reset()">Limpiar</button>
+         <br>
+         <br>
+
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" class="form-control" id="nombre"
+                 [(ngModel)]="model.nombre" name="nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control" id="apellido"
+                   [(ngModel)]="model.apellido" name="apellido">
+          </div>
+
+        <div class="form-group">
+            <label for="correo">Correo</label>
+            <input type="email" class="form-control" id="correo"
+                   [(ngModel)]="model.correo" name="correo">
+          </div>
+
+      </form>
+    </div>
+</div>
+
+
+

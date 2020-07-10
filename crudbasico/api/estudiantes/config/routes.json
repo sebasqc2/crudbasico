@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/tablapruebas",
-      "handler": "tablaprueba.find",
+      "path": "/estudiantes",
+      "handler": "estudiantes.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/tablapruebas/count",
-      "handler": "tablaprueba.count",
+      "path": "/estudiantes/count",
+      "handler": "estudiantes.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/tablapruebas/:id",
-      "handler": "tablaprueba.findOne",
+      "path": "/estudiantes/:id",
+      "handler": "estudiantes.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/tablapruebas",
-      "handler": "tablaprueba.create",
+      "path": "/estudiantes",
+      "handler": "estudiantes.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/tablapruebas/:id",
-      "handler": "tablaprueba.update",
+      "path": "/estudiantes/:id",
+      "handler": "estudiantes.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/tablapruebas/:id",
-      "handler": "tablaprueba.delete",
+      "path": "/estudiantes/:id",
+      "handler": "estudiantes.delete",
       "config": {
         "policies": []
       }
